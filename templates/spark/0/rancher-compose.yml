@@ -15,5 +15,13 @@
         required: true
         type: "int"
         default: "2"
+      - variable: "spark_slaves"
+        label: "Default Spark Slaves"
+        description: "Number of Spark slaves"
+        required: true
+        type: "int"
+        default: "1"
 hadoop-datanode:
   scale: ${dfs_replication}
+spark-slave:
+  scale: ${spark_slaves}
