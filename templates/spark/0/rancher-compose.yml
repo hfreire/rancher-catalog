@@ -1,4 +1,4 @@
 .catalog:
-  name: "Spark + HDFS"
+  name: "Apache Spark + HDFS"
   version: "1.6.1"
-  description: "Lightning-fast cluster computing with distributed filesystem"
+  description: "Apache Spark is a fast and general engine for large-scale data processing. The Hadoop Distributed File System (HDFS) is a distributed file system designed to run on commodity hardware."

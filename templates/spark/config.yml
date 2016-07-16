@@ -1,5 +1,5 @@
-name: "Spark + HDFS"
+name: "Apache Spark + HDFS"
 description: |
-  Apache Spark.
+  Apache Spark is a fast and general engine for large-scale data processing. The Hadoop Distributed File System (HDFS) is a distributed file system designed to run on commodity hardware.
 version: 1.6.1
 category: "Big Data"
