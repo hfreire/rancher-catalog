@@ -4,7 +4,7 @@
   description: "Apache Spark is a fast and general engine for large-scale data processing. The Hadoop Distributed File System (HDFS) is a distributed file system designed to run on commodity hardware."
   questions:
       - variable: "dfs_cluster_name"
-        label: "Default HDFS cluster name"
+        label: "Default HDFS Cluster Name"
         description: "DFS Cluster name"
         default: "My DFS cluster"
         required: true
