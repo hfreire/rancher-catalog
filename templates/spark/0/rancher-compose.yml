@@ -1,0 +1,4 @@
+.catalog:
+  name: "Spark + HDFS"
+  version: "1.6.1"
+  description: "Lightning-fast cluster computing with distributed filesystem"

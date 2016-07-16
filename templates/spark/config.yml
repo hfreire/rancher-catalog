@@ -1,0 +1,5 @@
+name: "Spark + HDFS"
+description: |
+  Apache Spark.
+version: 1.6.1
+category: "Big Data"
