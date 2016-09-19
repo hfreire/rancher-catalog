@@ -1,0 +1,9 @@
+tor:
+  image: mattes/rotating-proxy:latest
+  labels:
+    io.rancher.container.hostname_override: container_name
+  environment:
+    - tors=${tor_router_number}
+  ports:
+    - "5566:5566"
+    - "1936:1936"

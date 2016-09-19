@@ -1,0 +1,5 @@
+name: "Tor"
+description: |
+  Tor is free software for enabling anonymous communication. Tor directs Internet traffic through a free, worldwide, volunteer network consisting of more than seven thousand relays to conceal a user's location and usage from anyone conducting network surveillance or traffic analysis.
+version: 0.2.8.7
+category: "Network"

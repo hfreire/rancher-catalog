@@ -1,0 +1,13 @@
+.catalog:
+  name: "Tor"
+  version: "0.2.8.7"
+  description: "Tor is free software for enabling anonymous communication. Tor directs Internet traffic through a free, worldwide, volunteer network consisting of more than seven thousand relays to conceal a user's location and usage from anyone conducting network surveillance or traffic analysis."
+  questions:
+      - variable: "tor_router_number"
+        label: "Default number of Tor routers"
+        description: "Number of Tor routers"
+        default: "1"
+        required: true
+        type: "int"
+tor:
+  scale: 1
