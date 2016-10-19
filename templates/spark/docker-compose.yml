@@ -22,7 +22,7 @@ hadoop-datanode:
     - CORE_CONF_fs_defaultFS=hdfs://hadoop-namenode:8020
 
 spark-master:
-  image: uhopper/hadoop-spark:1.6.2_2.7.2
+  image: hfreire/hadoop-spark:1.6.2_2.7.2
   labels:
     io.rancher.container.hostname_override: container_name
   environment:
@@ -36,7 +36,7 @@ spark-master:
   command: master
 
 spark-slave:
-  image: uhopper/hadoop-spark:1.6.2_2.7.2
+  image: hfreire/hadoop-spark:1.6.2_2.7.2
   labels:
     io.rancher.container.hostname_override: container_name
   environment:
