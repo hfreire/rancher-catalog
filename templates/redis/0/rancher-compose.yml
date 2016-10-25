@@ -1,0 +1,41 @@
+.catalog:
+  name: "Redis"
+  version: "3.0.7"
+  description: "Redis is an open-source, networked, in-memory, key-value data store with optional durability. It is written in ANSI C."
+  questions:
+      - variable: "sentinel_down_after"
+        label: "Default Sentinel Down After"
+        description: "Sentinel down after"
+        default: "5000"
+        required: true
+        type: "int"
+      - variable: "sentinel_failover_timeout"
+        label: "Default Sentinel Failover Timeout"
+        description: "Sentinel failover timeout"
+        required: true
+        type: "int"
+        default: "5000"
+      - variable: "redis_masters"
+        label: "Default Number of Redis Masters"
+        description: "Number of redis masters"
+        default: "1"
+        required: true
+        type: "int"
+      - variable: "redis_slaves"
+        label: "Default Number of Redis Slaves"
+        description: "Number of redis slaves"
+        default: "2"
+        required: true
+        type: "int"
+      - variable: "redis_sentinels"
+        label: "Default Number of Redis Sentinels"
+        description: "Number of redis sentinels"
+        default: "3"
+        required: true
+        type: "int"
+master:
+  scale: ${redis_masters}
+slave:
+  scale: ${redis_slaves}
+sentinel:
+  scale: ${redis_sentinels}

@@ -1,0 +1,23 @@
+master:
+  image: redis:3
+  labels:
+    io.rancher.container.hostname_override: container_name
+
+slave:
+  image: redis:3
+  labels:
+    io.rancher.container.hostname_override: container_name
+  command: redis-server --slaveof redis-master 6379
+  links:
+    - master:redis-master
+
+sentinel:
+  image: hfreire/redis-sentinel
+  labels:
+    io.rancher.container.hostname_override: container_name
+  environment:
+    - SENTINEL_DOWN_AFTER=${sentinel_down_after}
+    - SENTINEL_FAILOVER=${sentinel_failover_timeout}
+  links:
+    - master:redis-master
+    - slave
