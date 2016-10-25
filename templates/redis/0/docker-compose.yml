@@ -2,6 +2,8 @@ redis-master:
   image: redis:3
   labels:
     io.rancher.container.hostname_override: container_name
+  ports:
+    - "6379":"6379"
 
 redis-slave:
   image: redis:3
@@ -10,6 +12,8 @@ redis-slave:
   command: redis-server --slaveof redis-master 6379
   links:
     - redis-master:redis-master
+  ports:
+    - "6379":"6379"
 
 redis-sentinel:
   image: hfreire/redis-sentinel
@@ -21,3 +25,6 @@ redis-sentinel:
   links:
     - redis-master:redis-master
     - redis-slave
+  ports:
+    - "6379":"6379"
+    - "26379":"26379"
