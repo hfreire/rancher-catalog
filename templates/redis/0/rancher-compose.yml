@@ -5,13 +5,13 @@
   questions:
       - variable: "sentinel_down_after"
         label: "Default Sentinel Down After"
-        description: "Sentinel down after"
+        description: "Sentinel down after milliseconds"
         default: "5000"
         required: true
         type: "int"
       - variable: "sentinel_failover_timeout"
         label: "Default Sentinel Failover Timeout"
-        description: "Sentinel failover timeout"
+        description: "Sentinel failover timeout milliseconds"
         required: true
         type: "int"
         default: "5000"
@@ -33,9 +33,9 @@
         default: "3"
         required: true
         type: "int"
-master:
+redis-master:
   scale: ${redis_masters}
-slave:
+redis-slave:
   scale: ${redis_slaves}
-sentinel:
+redis-sentinel:
   scale: ${redis_sentinels}
