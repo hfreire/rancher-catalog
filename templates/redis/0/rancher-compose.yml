@@ -30,7 +30,7 @@
       - variable: "redis_sentinel_quorum"
         label: "Default Quorum Number"
         description: "Required number of sentinels to agree that Redis master is down."
-        default: "3"
+        default: "2"
         required: true
         type: "int"
 redis-master:
