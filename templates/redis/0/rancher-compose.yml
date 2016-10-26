@@ -4,13 +4,13 @@
   description: "Redis is an open-source, networked, in-memory, key-value data store with optional durability. It is written in ANSI C."
   questions:
       - variable: "sentinel_down_after"
-        label: "Default Down After"
+        label: "Default Downtime Timeout"
         description: "The time (milliseconds) it takes to consider Redis Master is down."
         default: "300"
         required: true
         type: "int"
       - variable: "sentinel_failover_timeout"
-        label: "Default Sentinel Failover Timeout"
+        label: "Default Failover Timeout"
         description: "The time (milliseconds) it takes takes to complete a failover in normal circunstances."
         required: true
         type: "int"
