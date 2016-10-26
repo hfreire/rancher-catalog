@@ -20,11 +20,11 @@ redis-sentinel:
   labels:
     io.rancher.container.hostname_override: container_name
   environment:
-    - SENTINEL_DOWN_AFTER=${sentinel_down_after}
-    - SENTINEL_FAILOVER=${sentinel_failover_timeout}
+    - SENTINEL_QUORUM=${redis_sentinel_quorum}
+    - SENTINEL_DOWN_AFTER=${redis_sentinel_down_after}
+    - SENTINEL_FAILOVER=${redis_sentinel_failover_timeout}
   links:
     - redis-master:redis-master
     - redis-slave
   ports:
-      - "6379:6379"
       - "26379:26379"
