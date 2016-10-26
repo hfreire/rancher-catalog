@@ -26,5 +26,4 @@ redis-sentinel:
     - redis-master:redis-master
     - redis-slave
   ports:
-      - "6379:6379"
       - "26379:26379"

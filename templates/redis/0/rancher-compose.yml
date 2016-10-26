@@ -4,37 +4,31 @@
   description: "Redis is an open-source, networked, in-memory, key-value data store with optional durability. It is written in ANSI C."
   questions:
       - variable: "sentinel_down_after"
-        label: "Default Sentinel Down After"
-        description: "Sentinel down after milliseconds"
-        default: "5000"
+        label: "Default Down After"
+        description: "The time (milliseconds) it takes to consider Redis Master is down."
+        default: "300"
         required: true
         type: "int"
       - variable: "sentinel_failover_timeout"
         label: "Default Sentinel Failover Timeout"
-        description: "Sentinel failover timeout milliseconds"
+        description: "The time (milliseconds) it takes takes to complete a failover in normal circunstances."
         required: true
         type: "int"
-        default: "5000"
-      - variable: "redis_masters"
-        label: "Default Number of Redis Masters"
-        description: "Number of redis masters"
-        default: "1"
-        required: true
-        type: "int"
+        default: "180000"
       - variable: "redis_slaves"
         label: "Default Number of Redis Slaves"
-        description: "Number of redis slaves"
+        description: "Number of Redis slaves"
         default: "2"
         required: true
         type: "int"
       - variable: "redis_sentinels"
         label: "Default Number of Redis Sentinels"
-        description: "Number of redis sentinels"
+        description: "Number of Redis sentinels"
         default: "3"
         required: true
         type: "int"
 redis-master:
-  scale: ${redis_masters}
+  scale: 1
 redis-slave:
   scale: ${redis_slaves}
 redis-sentinel:
