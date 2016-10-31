@@ -14,7 +14,7 @@
         description: "The time (milliseconds) it takes takes to complete a failover in normal circunstances."
         required: true
         type: "int"
-        default: "180000"
+        default: "5000"
       - variable: "redis_slaves"
         label: "Default Number of Redis Slaves"
         description: "Number of Redis slaves"
