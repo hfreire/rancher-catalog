@@ -1,6 +1,6 @@
 .catalog:
   name: "Redis"
-  version: "3.0.7"
+  version: "3.2.4"
   description: "Redis is an open-source, networked, in-memory, key-value data store with optional durability. It is written in ANSI C."
   questions:
       - variable: "redis_sentinel_down_after"
