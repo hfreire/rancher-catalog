@@ -1,0 +1,23 @@
+.catalog:
+  name: "Apache Flume"
+  version: "1.6.0"
+  description: "Apache Flume is a distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of log data."
+  questions:
+    - variable: "flume_agent_name"
+      label: "Default Flume agent name"
+      description: "Flume agent name"
+      default: "a0"
+      required: true
+      type: "string"
+    - variable: "hdfs_link"
+      description: |
+        Choose the HDFS service to use.
+      label: "HDFS stack/service"
+      required: true
+      type: "service"
+    - variable: "kafka_link"
+      description: |
+        Choose the Kafka service to use. 
+      label: "Kafka stack/service"
+      required: true
+      type: "service"

@@ -1,0 +1,5 @@
+name: "Apache Flume"
+description: |
+  Apache Flume is a distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of log data.
+version: 1.6.0
+category: "Big Data"
