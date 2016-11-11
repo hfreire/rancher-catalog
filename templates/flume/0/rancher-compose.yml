@@ -1,6 +1,6 @@
 .catalog:
   name: "Apache Flume"
-  version: "1.6.0"
+  version: "1.7.0"
   description: "Apache Flume is a distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of log data."
   questions:
     - variable: "flume_agent_name"
