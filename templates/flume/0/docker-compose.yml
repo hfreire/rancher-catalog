@@ -12,7 +12,7 @@ flume:
     - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_topics=dialogs
     - FLUME_CONF_${flume_agent_name}_sources_source1_channels=channel1
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_type=hdfs
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_path=/dialogs/1
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_path=hdfs://hdfs/dialogs/1
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollInterval=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollSize=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollCount=0
