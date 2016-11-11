@@ -8,7 +8,7 @@ flume:
     - FLUME_CONF_${flume_agent_name}_sinks=sink1
     - FLUME_CONF_${flume_agent_name}_channels=channel1
     - FLUME_CONF_${flume_agent_name}_sources_source1_type=org.apache.flume.source.kafka.KafkaSource
-    - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_bootstrap_servers=kafka
+    - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_bootstrap_servers=kafka:9092
     - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_topics=dialogs
     - FLUME_CONF_${flume_agent_name}_sources_source1_channels=channel1
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_type=hdfs
