@@ -1,6 +1,6 @@
 flume:
   tty: true
-  image: hfreire/flume:1.6.0
+  image: hfreire/flume
   environment:
     - CORE_CONF_fs_defaultFS=hdfs://hdfs:8020
     - FLUME_AGENT_NAME=${flume_agent_name}
