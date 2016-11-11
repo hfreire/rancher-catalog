@@ -15,9 +15,9 @@
       label: "HDFS stack/service"
       required: true
       type: "service"
-    - variable: "kafka_link"
+    - variable: "zookeeper_link"
       description: |
-        Choose the Kafka service to use. 
-      label: "Kafka stack/service"
+        Choose the Zookeeper service to use.
+      label: "Zookeeper stack/service"
       required: true
       type: "service"

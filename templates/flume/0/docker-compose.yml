@@ -4,24 +4,23 @@ flume:
   environment:
     - CORE_CONF_fs_defaultFS=hdfs://hdfs:8020
     - FLUME_AGENT_NAME=${flume_agent_name}
-    - FLUME_CONF_${flume_agent_name}_sources=r1
-    - FLUME_CONF_${flume_agent_name}_sinks=k1
-    - FLUME_CONF_${flume_agent_name}_channels=c1
-    - FLUME_CONF_${flume_agent_name}_sources_r1_type=org.apache.flume.source.http.HTTPSource
-    - FLUME_CONF_${flume_agent_name}_sources_r1_port=9000
-    - FLUME_CONF_${flume_agent_name}_sinks_k1_type=hdfs
-    - FLUME_CONF_${flume_agent_name}_sinks_k1_hdfs_path=/dialogs/%{companyId}/%{userId}
-    - FLUME_CONF_${flume_agent_name}_sinks_k1_hdfs_round=true
-    - FLUME_CONF_${flume_agent_name}_sinks_k1_hdfs_roundValue=10
-    - FLUME_CONF_${flume_agent_name}_sinks_k1_hdfs_roundUnit=minute
-    - FLUME_CONF_${flume_agent_name}_channels_c1_type=memory
-    - FLUME_CONF_${flume_agent_name}_channels_c1_capacity=1000
-    - FLUME_CONF_${flume_agent_name}_channels_c1_transactionCapacity=100
-    - FLUME_CONF_${flume_agent_name}_sources_r1_channels=c1
-    - FLUME_CONF_${flume_agent_name}_sinks_k1_channel=c1
+    - FLUME_CONF_${flume_agent_name}_sources=source1
+    - FLUME_CONF_${flume_agent_name}_sinks=sink1
+    - FLUME_CONF_${flume_agent_name}_channels=channel1
+    - FLUME_CONF_${flume_agent_name}_sources_source1_type=org.apache.flume.source.kafka.KafkaSource
+    - FLUME_CONF_${flume_agent_name}_sources_source1_zookeeperConnect=zookeeper
+    - FLUME_CONF_${flume_agent_name}_sources_source1_topic=dialogs
+    - FLUME_CONF_${flume_agent_name}_sources_source1_channels=channel1
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_type=hdfs
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_path=/dialogs/1.json
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_fileType=DataStream
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_channel=channel1
+    - FLUME_CONF_${flume_agent_name}_channels_channel1_type=memory
+    - FLUME_CONF_${flume_agent_name}_channels_channel1_capacity=1000
+    - FLUME_CONF_${flume_agent_name}_channels_channel1_transactionCapacity=100
   external_links:
-    - ${kafka_link}:kafka
+    - ${zookeeper_link}:zookeeper
     - ${hdfs_link}:hdfs
-  labels: 
+  labels:
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     io.rancher.container.hostname_override: container_name
