@@ -16,7 +16,6 @@ flume:
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollInterval=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollSize=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollCount=0
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_idleTimeout 10800
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_fileSuffix=.json
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_channel=channel1
     - FLUME_CONF_${flume_agent_name}_channels_channel1_type=memory
