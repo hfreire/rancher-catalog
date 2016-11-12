@@ -1,5 +1,5 @@
 hadoop-namenode:
-  image: uhopper/hadoop-namenode:2.7.2
+  image: hfreire/hadoop-namenode:2.7.2
   labels:
     io.rancher.container.hostname_override: container_name
   volumes:
@@ -13,7 +13,7 @@ hadoop-namenode:
     - "8020:8020"
 
 hadoop-datanode:
-  image: uhopper/hadoop-datanode:2.7.2
+  image: hfreire/hadoop-datanode:2.7.2
   labels:
     io.rancher.container.hostname_override: container_name
   volumes:
