@@ -10,7 +10,7 @@ flume:
     - FLUME_CONF_${flume_agent_name}_sources_source1_type=org.apache.flume.source.kafka.KafkaSource
     - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_bootstrap_servers=kafka:9092
     - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_topics=dialogs
-    - FLUME_CONF_${flume_agent_name}_sources_source1_interceptors = i1
+    - FLUME_CONF_${flume_agent_name}_sources_source1_interceptors=i1
     - FLUME_CONF_${flume_agent_name}_sources_source1_interceptors_i1_type=sh.exec.flume.interceptor.JsonInterceptor$$Builder
     - FLUME_CONF_${flume_agent_name}_sources_source1_interceptors_i1_extractProperties=company_id,user_id
     - FLUME_CONF_${flume_agent_name}_sources_source1_channels=channel1
