@@ -16,7 +16,7 @@ flume:
     - FLUME_CONF_${flume_agent_name}_sources_source1_channels=channel1
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_type=hdfs
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_path=hdfs://hdfs/dialogs/%{company_id}/%{user_id}
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollInterval=180
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollInterval=10800
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollSize=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollCount=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_filePrefix=dialog
