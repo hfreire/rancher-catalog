@@ -19,8 +19,8 @@ flume:
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollInterval=180
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollSize=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollCount=0
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_filePrefix=
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_fileSuffix=
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_filePrefix=""
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_fileSuffix=""
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_fileType=DataStream
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_channel=channel1
     - FLUME_CONF_${flume_agent_name}_channels_channel1_type=memory
