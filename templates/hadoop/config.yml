@@ -1,0 +1,5 @@
+name: "Apache Hadoop"
+description: |
+  Apache Hadoop is an open-source software framework used for distributed storage and processing of very large data sets. The core of Apache Hadoop consists of a storage part, known as Hadoop Distributed File System (HDFS), and a processing part called MapReduce.
+version: 2.7.2
+category: "Big Data"

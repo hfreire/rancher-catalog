@@ -1,0 +1,19 @@
+.catalog:
+  name: "Apache Hadoop"
+  version: "2.7.2"
+  description: "Apache Hadoop is an open-source software framework used for distributed storage and processing of very large data sets. The core of Apache Hadoop consists of a storage part, known as Hadoop Distributed File System (HDFS), and a processing part called MapReduce."
+  questions:
+      - variable: "cluster_name"
+        label: "Default Cluster Name"
+        description: "Cluster name"
+        default: "My cluster"
+        required: true
+        type: "string"
+      - variable: "dfs_replication"
+        label: "Default HDFS Replica Count"
+        description: "Number of HDFS replicas"
+        default: "2"
+        required: true
+        type: "int"
+datanode:
+  scale: ${dfs_replication}
