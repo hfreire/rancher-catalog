@@ -2,33 +2,35 @@ flume:
   tty: true
   image: hfreire/flume
   environment:
-    - CORE_CONF_fs_defaultFS=hdfs://hdfs:8020
+    - CORE_CONF_fs_defaultFS=hdfs://namenode:8020
     - FLUME_AGENT_NAME=${flume_agent_name}
     - FLUME_CONF_${flume_agent_name}_sources=source1
     - FLUME_CONF_${flume_agent_name}_sinks=sink1
     - FLUME_CONF_${flume_agent_name}_channels=channel1
     - FLUME_CONF_${flume_agent_name}_sources_source1_type=org.apache.flume.source.kafka.KafkaSource
-    - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_bootstrap_servers=kafka:9092
+    - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_bootstrap_servers=broker:9092
     - FLUME_CONF_${flume_agent_name}_sources_source1_kafka_topics=dialogs
     - FLUME_CONF_${flume_agent_name}_sources_source1_interceptors=i1
     - FLUME_CONF_${flume_agent_name}_sources_source1_interceptors_i1_type=sh.exec.flume.interceptor.JsonInterceptor$$Builder
     - FLUME_CONF_${flume_agent_name}_sources_source1_interceptors_i1_extractProperties=company_id,user_id,timestamp
     - FLUME_CONF_${flume_agent_name}_sources_source1_channels=channel1
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_type=hdfs
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_path=hdfs://hdfs/dialogs/%{company_id}/%{user_id}
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollInterval=10800
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_minBlockReplicas=1
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_idleTimeout=1200
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_path=hdfs://namenode/dialogs/%{company_id}/%{user_id}
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollInterval=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollSize=0
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_rollCount=0
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_filePrefix=dialog
-    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_fileSuffix=.data
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_filePrefix=%{user_id}
+    - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_fileSuffix=.dialog
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_hdfs_fileType=DataStream
     - FLUME_CONF_${flume_agent_name}_sinks_sink1_channel=channel1
     - FLUME_CONF_${flume_agent_name}_channels_channel1_type=memory
     - FLUME_CONF_${flume_agent_name}_channels_channel1_capacity=1000
     - FLUME_CONF_${flume_agent_name}_channels_channel1_transactionCapacity=100
   external_links:
-    - ${kafka_link}:kafka
-    - ${hdfs_link}:hdfs
+    - ${kafka_link}:broker
+    - ${hdfs_link}:namenode
   labels:
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     io.rancher.container.hostname_override: container_name
