@@ -1,26 +1,20 @@
 .catalog:
-  name: "Apache Spark + HDFS"
-  version: "1.6.2"
-  description: "Apache Spark is a fast and general engine for large-scale data processing. The Hadoop Distributed File System (HDFS) is a distributed file system designed to run on commodity hardware."
+  name: "Apache Spark"
+  version: "2.0.2"
+  description: "Apache Spark is a fast and general engine for large-scale data processing."
   questions:
-      - variable: "dfs_cluster_name"
-        label: "Default HDFS Cluster Name"
-        description: "DFS Cluster name"
-        default: "My DFS cluster"
-        required: true
-        type: "string"
-      - variable: "dfs_replication"
-        label: "Default HDFS Replica Count"
-        description: "Number of DFS replicas"
-        required: true
-        type: "int"
-        default: "2"
       - variable: "spark_slaves"
         label: "Default Spark Slaves"
         description: "Number of Spark slaves"
         required: true
         type: "int"
         default: "1"
+    - variable: "hdfs_link"
+        description: |
+          Choose the HDFS service to use.
+        label: "HDFS stack/service"
+        required: true
+        type: "service"
 hadoop-datanode:
   scale: ${dfs_replication}
 spark-slave:
