@@ -15,7 +15,5 @@
         label: "HDFS stack/service"
         required: true
         type: "service"
-hadoop-datanode:
-  scale: ${dfs_replication}
 spark-slave:
   scale: ${spark_slaves}
