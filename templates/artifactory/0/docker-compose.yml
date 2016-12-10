@@ -15,3 +15,5 @@ artifactory-server:
   labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.sidekicks: artifactory-data
+  volumes_from:
+    - artifactory-data  
