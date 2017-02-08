@@ -6,7 +6,8 @@ server:
     io.rancher.sidekicks: nexus3-datavolume
     io.rancher.container.hostname_override: container_name
   volumes_from:
-    - nexus3-datavolume
+    - datavolume
+
 datavolume:
   image: "sonatype/nexus3"
   volumes:
