@@ -10,7 +10,7 @@ nexus3:
 nexus3-datavolume:
   image: "sonatype/nexus3"
   volumes:
-    - /var/jenkins_home
+    - /var/nexus3
   labels:
     io.rancher.container.start_once: true
   entrypoint: ["echo", "data-only container for Nexus"]
