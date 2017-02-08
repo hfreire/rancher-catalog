@@ -3,7 +3,7 @@ server:
   ports:
     - "${PORT}:8081"
   labels:
-    io.rancher.sidekicks: nexus3-datavolume
+    io.rancher.sidekicks: datavolume
     io.rancher.container.hostname_override: container_name
   volumes_from:
     - datavolume
